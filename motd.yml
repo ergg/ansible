@@ -7,7 +7,7 @@
       template:
         src: mytemplates/motd.j2
         dest: /etc/motd
-
+sssss
 
 
 
