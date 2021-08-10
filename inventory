@@ -1,0 +1,9 @@
+[proxy]
+finrh8.bechtlezh.ch
+
+[webservers]
+finldap03.bechtlezh.ch
+finldap01.bechtlezh.ch
+
+[database]
+finrh7.bechtlezh.ch

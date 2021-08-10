@@ -1,0 +1,19 @@
+--- 
+- name: regular_tasks
+  hosts: proxy
+  tasks:
+    - name: regular_tasks
+      cron:
+        name: "cron every hour" 
+        minute: "0"
+        hour: "0-23"
+        job: "date > /var/log/time.log"
+ 
+
+
+
+#  Create a playbook /home/automation/plays/regular_tasks.yml that runs on servers in the proxy host group and does the following:
+#
+#  A root crontab record is created that runs every hour.
+#  The cron job appends the file /var/log/time.log with the output from the date command.
+    

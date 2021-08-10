@@ -1,0 +1,27 @@
+---
+- name: repo
+  hosts: database
+  tasks:
+    - name: repo
+      yum_repository:
+        name: mysql80-community
+        description: “MySQL 8.0 YUM Repo”
+        baseurl: http://repo.mysql.com/yum/mysql-8.0-community/el/8/x86_64/
+        gpgcheck: yes
+        gpgcakey: http://repo.mysql.com/RPM-GPG-KEY-mysql
+        enabled: true 
+
+ 
+
+
+
+#  Create a playbook /home/automation/plays/repository.yml that runs on servers in the database host group and does the following:
+#
+#  A YUM repository file is created.
+#  The name of the repository is mysql80-community.
+#  The description of the repository is “MySQL 8.0 YUM Repo”.
+#  Repository baseurl is http://repo.mysql.com/yum/mysql-8.0-community/el/8/x86_64/.
+#  Repository GPG key is at http://repo.mysql.com/RPM-GPG-KEY-mysql.
+#  Repository GPG check is enabled.
+#  Repository is enabled.
+    

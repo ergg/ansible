@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+ansible all -u root -m user -a " \
+name=automation \
+groups=wheel \
+append=true \
+"
+
+ansible all -u root -m authorized_key -a ' \
+user=automation \
+state=present \
+key='"{{ lookup('file', '/home/automation/.ssh/id_rsa.pub') }}"' \
+'
+
+ansible all -u root -m lineinfile -a " \
+path=/etc/sudoers \
+regexp='^# %wheel        ALL=(ALL)       NOPASSWD: ALL' \
+line='%wheel        ALL=(ALL)       NOPASSWD: ALL' \
+validate='/usr/sbin/visudo -cf %s' \
+"
